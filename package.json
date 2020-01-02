@@ -1,0 +1,25 @@
+{
+  "name": "task-queue",
+  "version": "0.1.0",
+  "description": "A task queue",
+  "main": "build/index.js",
+  "author": {
+    "name": "Alejandro de Frutos",
+    "email": "adefrutoscasado@gmail.com",
+    "url": "https://github.com/adefrutoscasado"
+  },
+  "license": "MIT",
+  "scripts": {
+    "tsc": "tsc",
+    "compile": "tsc"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb-es5": "^1.2.0",
+    "typescript": "^3.7.4"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}
