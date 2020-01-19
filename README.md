@@ -24,7 +24,7 @@ const updateDatabase = async id => {
   return { id }
 }
 
-const taskQueue = new Queue()
+const taskQueue = new TaskQueue()
 
 taskQueue.enqueue(() => updateDatabase(1)) // returns {id: 1}
 taskQueue.enqueue(() => updateDatabase(2)) // returns {id: 2}
