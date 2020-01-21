@@ -14,7 +14,7 @@ class Queue implements QueueInterface {
   private isBusy: boolean = false;
 
   enqueue<T>(task: Task<T>): Promise<T> {
-    const promise = new Promise((resolve, reject) => {
+    const promise = new Promise<T>((resolve, reject) => {
       this.queue.push({ task, resolve, reject });
     });
 
@@ -22,7 +22,7 @@ class Queue implements QueueInterface {
       this.isBusy = true;
       this.next();
     }
-    return promise as Promise<T>;
+    return promise;
   }
   private isEmpty(): boolean {
     return this.queue.length === 0;
