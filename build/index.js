@@ -9,17 +9,19 @@ class Queue {
         const promise = new Promise((resolve, reject) => {
             this.queue.push({ task, resolve, reject });
         });
-        if (this.queue.length === 1 && !this.isBusy) {
+        if (!this.isEmpty() && !this.isBusy) {
             this.isBusy = true;
             this.next();
         }
         return promise;
     }
+    isEmpty() {
+        return this.queue.length === 0;
+    }
     next() {
-        if (!this.queue.length)
+        if (this.isEmpty())
             return;
         this.isBusy = true;
-        // @ts-ignore
         const { task, resolve, reject } = this.queue.shift();
         task()
             .then(resolve)
