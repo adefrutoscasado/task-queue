@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./build",
     "lib": ["esnext","es2018.promise"],
     "outDir": "build",
     "target": "es6",
